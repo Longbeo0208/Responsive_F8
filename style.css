@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: #333;
+    position: relative;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 48px;
+}
+
+.bars-btn-icon {
+    position: absolute;
+    right: 1%;
+    top: 14%;
+    display: block;
+    color: #fff;
+    font-size: 32px;
+}
+
+/* Article */
+h1 {
+    line-height: 2rem;
+}
+
+article {
+    margin: 0 auto;
+    width: 70%;
+    padding: 0 16px;
+    line-height: 1.6rem;
+}
+
+article img {
+    width: 640px;
+    max-width: 100%;
+    display: block;
+    margin: 32px auto;
+}
+
+.nav__pc {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.nav__list {
+    padding: 0 16px;
+}
+
+/* Mobile nav */
+.nav__mobile {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    position: fixed;
+    background-color: #fff;
+    /* display: none; */
+    transform: translateX(100%);
+    transition: transform linear 0.3s;
+}
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.nav__input:checked ~ 
+.nav__mobile {
+    transform: translateX(0);
+}
+
+.nav__input:checked ~ 
+.nav__overlay {
+    display: block;
+    cursor: pointer;
+}
+
+.nav__mobile-btn-close {
+    opacity: 0.6;
+    position: absolute;
+    font-size: 48px;
+    right: 2%;
+    top: 5px;
+}
+
+.nav__mobile-btn-close:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.nav__title {
+    text-align: center;
+}
+
+.nav__line {
+    opacity: 0.3;
+}
+
+.nav__mobile-list {
+    font-size: 1.6rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__mobile-item {
+    padding: 16px 40px;
+}
+
+.nav__mobile-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.nav__bars-btn {
+    width: 32px;
+    height: 32px;
+    display: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1023px) {
+    .nav__bars-btn {
+        display: block;
+    }
+    .nav__pc {
+        display: none;
+    }
+}
